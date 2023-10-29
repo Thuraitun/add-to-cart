@@ -1,14 +1,26 @@
 <template>
-    <button class="btn" @click="router.push({name: 'catalog'})">Go to Catalog</button>
-    <div class="product">
-        <div class="product-image">
-            <img :src="selectedProduct.thumbnail" alt="">
-        </div>
-        <div class="product-details">
-            <h2>Brand: {{ selectedProduct.brand }}</h2>
-            <p>Description: {{ selectedProduct.description }}</p>
-            <h2>Price: $ {{ selectedProduct.price }}</h2>
-            <button class="addToCartBtn" @click="addToCart">Add to Cart</button>
+    <div class="main">
+        <v-btn
+            @click="router.push({name: 'catalog'})"
+            varient="outlined" 
+            color="amber-darken-4"
+        >
+            <v-icon
+            start
+            icon="mdi-arrow-left"
+            ></v-icon>
+            Go to Catalog
+        </v-btn>
+        <div class="product">
+            <div class="product-image">
+                <img :src="selectedProduct.thumbnail" alt="">
+            </div>
+            <div class="product-details">
+                <h2>Brand: {{ selectedProduct.brand }}</h2>
+                <p>Description: {{ selectedProduct.description }}</p>
+                <h2>Price: $ {{ selectedProduct.price }}</h2>
+                <v-btn @click="addToCart" variant="flat" color="blue-darken-4">Add to Cart</v-btn>
+            </div>
         </div>
     </div>
 </template>
@@ -42,6 +54,10 @@ const addToCart = () => {
 </script>
 
 <style scoped>
+
+.main {
+    margin: 30px;
+}
 .product {
     display: flex;
     margin-top: 50px;
@@ -60,11 +76,5 @@ const addToCart = () => {
     font-weight: bold;
 }
 
-.addToCartBtn {
-    padding: 8px 10px;
-    border: 0;
-    border-radius: 5px;
-    color: #ffff;
-    background-color: blue;
-}
+
 </style>
