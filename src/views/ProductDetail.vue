@@ -21,7 +21,7 @@
                     <h2>Brand: {{ selectedProduct.brand }}</h2>
                     <p>Description: {{ selectedProduct.description }}</p>
                     <h3>Price: $ {{ selectedProduct.price }}</h3>
-                    <v-btn class="my-3" @click="addToCart" variant="outlined" color="blue-darken-4">Add to Cart</v-btn>
+                    <v-btn class="my-4" @click="addToCart" variant="outlined" color="blue-darken-4">Add to Cart</v-btn>
                 </v-sheet>
             </v-col>
         </v-row>
