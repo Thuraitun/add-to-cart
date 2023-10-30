@@ -1,5 +1,5 @@
 <template>
-    <div class="products-list">
+    <div class="mx-5 my-5">
         <v-row no-gutters>
             <v-col 
                 v-for="product in store.products" 
@@ -21,7 +21,7 @@
                             {{ product.description }}
                         </v-card-text>
                         <v-card-actions>
-                            <v-btn @click="addToCart(product)" color="blue-darken-4" variant="flat">Add to Cart</v-btn>
+                            <v-btn @click="addToCart(product)" color="blue-darken-4" variant="outlined">Add to Cart</v-btn>
                             <v-btn @click="goToProductPage(product.id)" color="amber-darken-4" variant="outlined">Detail</v-btn>
                         </v-card-actions>
                     </v-card>

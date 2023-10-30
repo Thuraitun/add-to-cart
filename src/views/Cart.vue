@@ -1,10 +1,10 @@
 <template>
     <div v-if="!store.cart.length" style="text-align: center;">
-        <h1>Empty Cart...</h1>
-        <button class="btn" @click="router.push({name: 'catalog'})">Back to Catalog</button>
+        <h1 class="my-5">Empty Cart...</h1>
+        <v-btn @click="router.push({name: 'catalog'})" variant="outlined" color="red-accent-4">Back to Catalog</v-btn>
     </div>
-    <div v-else>
-        <button class="btn" @click="router.push({name: 'catalog'})">Continue Shopping</button>
+    <div v-else class="mx-5">
+        <v-btn class="my-5" @click="router.push({name: 'catalog'})" variant="outlined" color="amber-darken-4">Continue Shopping</v-btn>
         <div 
             class="cart-item"
             v-for="item in store.cart"
@@ -15,7 +15,7 @@
                 <span>Brand: {{ item.brand }}</span>
                 <span>Cateogory: {{ item.category }}</span>
                 <span>Price: $ {{ item.price }}</span>
-                <button @click="removeFromCart(item.id)">Remove</button>
+                <v-btn @click="removeFromCart(item.id)" color="red-accent-4" variant="outlined">Remove</v-btn>
             </div>
         </div>
     </div>

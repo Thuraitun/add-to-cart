@@ -1,27 +1,42 @@
 <template>
-    <div class="main">
+    <div class="mx-5 my-5">
         <v-btn
+            class="my-5"
             @click="router.push({name: 'catalog'})"
-            varient="outlined" 
+            variant="outlined" 
             color="amber-darken-4"
         >
-            <v-icon
-            start
-            icon="mdi-arrow-left"
-            ></v-icon>
             Go to Catalog
         </v-btn>
-        <div class="product">
+
+        <v-row no-gutters>
+            <v-col
+                cols="12"
+                sm="6"
+            >
+                <v-sheet>
+                    <img :src="selectedProduct.thumbnail" alt="">
+                </v-sheet>
+                <v-sheet>
+                    <h2>Brand: {{ selectedProduct.brand }}</h2>
+                    <p>Description: {{ selectedProduct.description }}</p>
+                    <h3>Price: $ {{ selectedProduct.price }}</h3>
+                    <v-btn class="my-3" @click="addToCart" variant="outlined" color="blue-darken-4">Add to Cart</v-btn>
+                </v-sheet>
+            </v-col>
+        </v-row>
+
+        <!-- <div class="product">
             <div class="product-image">
                 <img :src="selectedProduct.thumbnail" alt="">
             </div>
             <div class="product-details">
                 <h2>Brand: {{ selectedProduct.brand }}</h2>
                 <p>Description: {{ selectedProduct.description }}</p>
-                <h2>Price: $ {{ selectedProduct.price }}</h2>
-                <v-btn @click="addToCart" variant="flat" color="blue-darken-4">Add to Cart</v-btn>
+                <h3>Price: $ {{ selectedProduct.price }}</h3>
+                <v-btn @click="addToCart" variant="outlined" color="blue-darken-4">Add to Cart</v-btn>
             </div>
-        </div>
+        </div> -->
     </div>
 </template>
 
@@ -54,27 +69,5 @@ const addToCart = () => {
 </script>
 
 <style scoped>
-
-.main {
-    margin: 30px;
-}
-.product {
-    display: flex;
-    margin-top: 50px;
-}
-
-.product-image {
-    margin-right: 24px;
-}
-
-.btn {
-    padding: 8px 10px;
-    border: none;
-    border-radius: 8px;
-    color: white;
-    background-color: orangered;
-    font-weight: bold;
-}
-
 
 </style>
